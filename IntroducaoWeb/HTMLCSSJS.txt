@@ -1,0 +1,5 @@
+HTML - É a parte estrutural da página WEB. Ex: Titulo, Subtitulos, Artigos e afins;
+CSS - Estilização dos conteúdos gerados pelo HTML;
+Javascript - Determina mudanças na estrutura a partir de das ações do usuário;
+
+
