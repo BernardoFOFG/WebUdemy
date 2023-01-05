@@ -10,7 +10,11 @@ Estrutura de Pasta = {
     Js,
     Index.html,
     About.html
-}, Serve para dar confiabilidade na sua aplicação, e não ter imprevistos durante a renderização.
+}, 
+Serve para dar confiabilidade na sua aplicação, e não ter imprevistos durante a renderização.
+Este é um conteúdo estático, pois é um conteúdo renderizado será o mesmo na página sempre.
+
+Conteúdo Dinâmico - Terá que ter código que faça alterações dinamicas a partir de uma ação do usuário. Ex: Geração de listas de clientes, verificação no banco dedaos e etcs...
 
 Web Stack = {
     LAMP = {
