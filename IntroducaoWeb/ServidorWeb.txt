@@ -1,0 +1,21 @@
+Web Server - Pode se referir ao hardware ou ao software ou ambos trabalho em conjunto.
+Web Server Hardware - Quando envolve o hardware ele se refere ao armazenamento de arquivos que compõe um determinado site, e ele estará conectado a internet e pode ser acessado ao seu domínio(DNS);
+Web Server Software - Ele serve para controlar como os usuários acessam os arquivos armazenados.
+
+Virtual Hosting - Serve para manter mais de um servidor em uma disposito.
+
+Estrutura de Pasta = {
+    Images,
+    Css,
+    Js,
+    Index.html,
+    About.html
+}, Serve para dar confiabilidade na sua aplicação, e não ter imprevistos durante a renderização.
+
+Web Stack = {
+    LAMP = {
+    Linguagem,
+    Web server, DB,
+    Sistema Operacional
+    }
+}
