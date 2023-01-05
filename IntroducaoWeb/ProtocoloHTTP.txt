@@ -1,0 +1,48 @@
+Protoloco HTTP - Hyper Text Transfer Protocol
+É um protocolo que formula uma conversação entre duas maquinas para transferir hiper-tEXTOS de um lado para o outro.
+
+Características do Protocolo HTTP = {
+    - Faz parte da camada de aplicação,
+    - É um protocolo Stateless,
+    - Protocolo Cliente-Servidor - Requisição e Resposta,
+    - Opera na pilha TCP/IP,
+    - Ele responde a HTML, CSS, JS, Mídias...
+}
+
+Fluxo de uma conexão HTTP = {
+    1. Usuário Insere a URL no browser,
+    2. Browser gera as requisições,
+    3. Servidor Web gera as respostas,
+    4. Browser renderiza e exibe a pagina
+}
+
+Metodos HTTP = {
+    GET,
+    POST,
+    PUT,
+    DELETE,
+    TRACE,
+    OPTIONS,
+    CONNECT,
+    HEAD   
+}
+
+Requisição e Resposta
+Cliente envia uma requisição para o servidor, 
+utilizando (URL + parametros),
+e o servidor envia como resposta (HTML, CSS, JS, Mídias...)
+
+
+Requisição Via GET
+Solicita a representação de um recurso específico, ela serve basicamente para retornar dados.
+
+Requisição Via POST
+É utilizada para submeter determinada entidade a um recurso específico, ela serve basicamente para causar mudança ou efeitos colaterais no servidor.
+
+Grupo de Status HTTP = {
+    1** - Informação
+    2** - Sucesso
+    3** - Redirecionamento
+    4** - Erro no Cliente
+    5** - Erro no Servidor
+}
