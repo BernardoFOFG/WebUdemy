@@ -1,0 +1,63 @@
+Topologias de redes
+
+- Centralizada(Vários computadores ligados em apenas um nó);
+- Distribuida(Vários computadores ligados em diversos nós).
+
+
+Tiers de conexão da Web
+
+Tier 1 - É uma rede IP que pode alcançar todas as outras redes pelo meio de interconexão livre;
+Tier 2 - É a rede que emparelha com algumas redes, mas também tem o trânsito de emparelhamento para alcançar algumas partes da internet;
+Tier 3 - É uma rede que serve de trânsito de outras redes para participar da internet.
+
+
+Protocolos de Redes
+
+Transmission Control Protocol/Internet Protocol(TCP/IP) - TCP é um protocolo está na camada de transporte, e é um protocolo orientado a conexão, é confiável;
+User Datagram Protocol(UDP) - UDP é um protocolo que não é orienta a conexão, e ele é baseado no melhor esforço, ele não garante a entrega, fazendo assim não ser muito confiável.
+Internet Protocol(IP) - Roteamento entre redes
+
+Camadas de Protocolos
+TCP/IP - Camadas
+Aplicação - (HTTP, FTP, SMTP, Comunicação Processo-A-Processo, Número da porta)
+Tranporte - (TCP, UDP, Comunicação Host-A-Host(PointToPoint), Confiabilidade e Integridade)
+Internet - (IP, Conexão entre redes, Transferências de pacotes)
+Rede/Física - (Ethernet, Wifi, MAC address, Hardwares, Softwares)
+
+OSI - Camadas
+Aplicação
+Apresentação
+Sessão
+Transporte
+Redes
+Enlace
+Física
+
+
+Anatomia do Endereço IPv4
+
+Classes IPv4
+Classe A = { 
+    192.168.100.230
+    Rede.Host.Host.Host
+    255.0.0.0
+    Rede.Host.Host.Host
+}
+Classe B = {
+    192.168.100.230
+    Rede.Rede.Host.Host
+    255.255.0.0
+    Rede.Rede.Host.Host
+}
+Classe C = {
+    192.168.100.230
+    Rede.Rede.Rede.Host
+    255.255.255.0
+    Rede.Rede.Rede.Host
+}
+
+Quem determina a classe da rede é a mascara de subrede.
+
+
+Conceito de Porta
+Os processos têm que estar mapeados pelas portas para que haja uma comunicação de Processo A Processo;
