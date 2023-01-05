@@ -1,0 +1,19 @@
+WebService = {
+    Simple Object Acess Protocol(SOAP) = {(
+        WSDL,
+        XML,
+        RPC,
+    } É muito mais burocratico, e atualmente pouco utilizado,)
+    Representational State Transfer(REST) = {()
+        JSON,
+        HTTP,
+    }, É mais simples de ser usado, e utiliza os verbos utilizado no metodo HTTP)
+}
+
+Conversões RESTful
+        URL         Método   Descrição  
+      /Clientes     POST    Novo cliente
+      /Clientes     GET     Obtém todos clientes
+      /Clientes/36  GET     Obtém cliente 36
+      /Clientes/12  PUT     Atualiza cliente 12
+      /Clientes/41  DELETE  Exclui cliente 41

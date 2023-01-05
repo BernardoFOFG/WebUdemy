@@ -1,0 +1,8 @@
+HTPPSeguro = {
+    - Dados criptografados usando os protocolos TLS ou SSL,
+    - Protege contra interceptação (MITM),
+    - Criptografa todas as informação: URL, Cookies, Headers,
+    - Usa certificados digitais
+}
+
+Autoridades Certificadoras - Organizações que emitem e validam os certificados,
