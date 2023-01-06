@@ -28,16 +28,28 @@
     </footer>
 
     <script>
-      document.querySelectorAll("a").forEach((link) => {
-        const conteudo = document.getElementById("conteudo");
-        link.onclick = (e) => {
-          e.preventDefault();
+        document.querySelectorAll("a").forEach((link) => {
+          const conteudo = document.getElementById("conteudo");
+          link.onclick = (e) => {
+            e.preventDefault();
 
-          fetch(link.href)
-            .then((res) => res.text())
-            .then((html) => (conteudo.innerHTML = html));
-        };
-      });
+            fetch(link.href)
+              .then((res) => res.text())
+              .then((html) => (conteudo.innerHTML = html))
+              .then(() => esconderLista())
+          };
+        });
+        const esconderLista = () => {
+        document.querySelectorAll("[wm-folder]").forEach((folder) => {
+          folder.onclick = (e) => {
+            console.log("AA")
+            const ul = folder.nextElementSibling; // Pega o próximo elemento html
+            const d = ul.style.display;
+
+            ul.style.display = d === "none" ? "block" : "none";
+          };
+        });
+      }
     </script>
   </body>
 </html>
