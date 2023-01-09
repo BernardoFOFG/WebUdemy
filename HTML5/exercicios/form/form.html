@@ -1,17 +1,16 @@
 <h1>Formulário</h1>
 
 <form action="http://localhost:3003/usuarios" method="post">
+  <input type="hidden" name="id" value="3" />
   <input type="text" name="nome" />
   <input type="password" name="senha" />
   <textarea name="bio" cols="30" rows="10"></textarea>
   <div>
-    <input type="radio" name="tipo" value="admin"> Admin
-    <input type="radio" name="tipo" value="regular"> Regular
-    <input type="radio" name="tipo" value="professor"> Professor
+    <input type="radio" name="tipo" value="admin" /> Admin
+    <input type="radio" name="tipo" value="regular" /> Regular
+    <input type="radio" name="tipo" value="professor" /> Professor
   </div>
-  <div>
-    <input type="checkbox" name="ativo" value="ativo"> Ativo
-  </div>
+  <div><input type="checkbox" name="ativo" value="ativo" /> Ativo</div>
 
   <select name="estado">
     <option value="ac">Acre</option>
@@ -26,16 +25,19 @@
     <option value="go">Go</option>
     <option value="c">C</option>
   </select>
-  <button type="submit">Incluir</button>
+  <button formaction="http://localhost:3003/usuarios">Incluir</button>
+  <button formaction="http://localhost:3003/usuarios/3">Alterar</button>
 </form>
 
-
 <style>
-    input, text, select {
-        display: block;
-        margin-bottom: 10px;
-    }
-    input[type=radio], input[type=checkbox] {
-        display: inline;
-    }
+  input,
+  text,
+  select {
+    display: block;
+    margin-bottom: 10px;
+  }
+  input[type="radio"],
+  input[type="checkbox"] {
+    display: inline;
+  }
 </style>
