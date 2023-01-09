@@ -32,28 +32,43 @@
     </footer>
 
     <script>
-        document.querySelectorAll("a").forEach((link) => {
-          const conteudo = document.getElementById("conteudo");
-          link.onclick = (e) => {
-            e.preventDefault();
+      document.querySelectorAll("a").forEach((link) => {
+        const conteudo = document.getElementById("conteudo");
+        link.onclick = (e) => {
+          e.preventDefault();
 
-            fetch(link.href)
-              .then((res) => res.text())
-              .then((html) => (conteudo.innerHTML = html))
-              .then(() => esconderLista())
-          };
-        });
-        const esconderLista = () => {
+          fetch(link.href)
+            .then((res) => res.text())
+            .then((html) => (conteudo.innerHTML = html))
+            .then(() => esconderLista());
+        };
+      });
+      const esconderLista = () => {
         document.querySelectorAll("[wm-folder]").forEach((folder) => {
           folder.onclick = (e) => {
-            console.log("AA")
+            console.log("AA");
             const ul = folder.nextElementSibling; // Pega o próximo elemento html
             const d = ul.style.display;
 
             ul.style.display = d === "none" ? "block" : "none";
           };
         });
+      };
+
+      function mover(elem, inicio, fim, passo, callback) {
+        const novoInicio = inicio - passo;
+        if (novoInicio >= fim) {
+          elem.style.left = novoInicio - "px";
+          setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7);
+        } else {
+          callback();
+        }
       }
+      const p = document.querySelector("[wm-slider] > p");
+      p.style.display = "block";
+      mover(p, 1500, -520, 5, () => {
+        console.log("Terminou!!");
+      });
     </script>
   </body>
 </html>
