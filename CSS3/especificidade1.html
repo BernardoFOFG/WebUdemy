@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Especificidade CSS</title>
+    <style>
+      /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
+      /*
+        Em linhas gerais...
+
+        1. Regras com !important;
+        2. Seletores mais especificos;
+        3. Última regra processada;
+    */
+
+      p {
+        background: #aaa;
+      }
+      .observacao {
+        /* Esse tem mais prioridade do que a declaação apenas com a Tag*/
+        background-color: #5f5;
+        border: dashed 5px;
+        padding: 20px !important /* Esse sobrescreverá o abaixo por conta da prioridade*/;
+        font-size: 40px;
+      }
+      p.observacao {
+        /* Esse é mais especifico do que todos */
+        padding: 2px;
+        background: linear-gradient(to right, red, orange);
+      }
+    </style>
+  </head>
+
+  <body>
+    <p class="observacao">Olha essa observação!!!!</p>
+  </body>
+</html>
