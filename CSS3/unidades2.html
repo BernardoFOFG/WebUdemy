@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Unidades #02</title>
+    <style>
+      .fora {
+        position: relative;
+        background-color: orange;
+        width: 400px;
+        height: 400px;
+        padding: 50px;
+      }
+      .dentro {
+        background-color: mediumvioletred;
+        height: 100px;
+        width: 100%;
+        position: static; /* fica igual */
+        position: relative; /* fica igual */
+        position: absolute; /* conteudo + padding */
+        position: fixed; /* conteudo + viewport */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fora">
+      <div class="dentro">aa</div>
+    </div>
+  </body>
+</html>
