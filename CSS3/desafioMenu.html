@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Desafio Menu</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald"
+      rel="stylesheet"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      a {
+        text-decoration: none;
+      }
+      li {
+        list-style: none;
+      }
+      body {
+        background-color: aliceblue;
+      }
+      .cabecalho {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 100%;
+
+        background-color: #333;
+        padding: 12px 24px;
+
+        border-bottom: 10px solid steelblue;
+
+        font-family: "Oswald";
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+      }
+      .logo a img {
+        height: 75px;
+      }
+      .menu {
+        display: flex;
+      }
+      .menu ul {
+        display: flex;
+        gap: 16px;
+      }
+      .menu ul li a {
+        color: white;
+        padding: 20px;
+        font-size: 24px;
+      }
+      .menu ul li a:hover,
+      .menu ul li a.selected {
+        background-color: steelblue;
+        color: black;
+      }
+      .autenticacao {
+        display: block;
+      }
+      .menu-toggle {
+        display: none;
+        padding: 16px;
+        background-color: gray;
+        border: none;
+        color: white;
+        border-radius: 8px;
+      }
+      .autenticacao {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+      }
+      .autenticacao a {
+        color: white;
+      }
+      .autenticacao a:nth-child(2) {
+        background-color: red;
+        padding: 8px 24px;
+        border-radius: 16px;
+      }
+
+      @media (max-width: 1110px) {
+        .autenticacao {
+          display: none;
+        }
+        .cabecalho {
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 998px) {
+        .menu {
+          display: none;
+        }
+        .menu-toggle {
+          display: block;
+        }
+        .logo {
+          width: 100%;
+          justify-content: space-between;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="cabecalho">
+      <div class="logo">
+        <a href="#inicio">
+          <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
+        </a>
+        <button class="menu-toggle">
+          <i class="fa fa-lg fa-bars"></i>
+        </button>
+        <nav class="menu">
+          <ul>
+            <li>
+              <a href="#inicio">Início</a>
+            </li>
+            <li>
+              <a href="#cursos">Cursos</a>
+            </li>
+            <li>
+              <a href="#sobre">Sobre</a>
+            </li>
+            <li>
+              <a href="#contato">Contato</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <aside class="autenticacao">
+        <a href="#login">Login</a>
+        <a href="#registar" class="botao destaque">Registrar</a>
+      </aside>
+    </header>
+
+    <script>
+      window.onhashchange = function (e) {
+        const oldURL = e.oldURL.split("#")[1];
+        const newURL = e.newURL.split("#")[1];
+
+        const oldMenu = document.querySelector(`.menu a[href='#${oldURL}']`);
+        const newMenu = document.querySelector(`.menu a[href='#${newURL}']`);
+        console.log(oldMenu, newMenu);
+        oldMenu && oldMenu.classList.remove("selected");
+        newMenu && newMenu.classList.add("selected");
+      };
+    </script>
+  </body>
+</html>
