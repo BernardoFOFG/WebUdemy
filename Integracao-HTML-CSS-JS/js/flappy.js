@@ -125,6 +125,30 @@ setInterval(() => {
 }, 20);
 */
 
+function estaoSobrePostos(elementoA, elementoB) {
+  const a = elementoA.getBoundingClientRect();
+  const b = elementoB.getBoundingClientRect();
+
+  const horizontal = a.left + a.width >= b.left && b.left + b.width >= a.left;
+  const vertical = a.top + a.height >= b.top && b.top + b.height >= a.top;
+  return horizontal && vertical;
+}
+
+function colidiu(passaro, barreiras) {
+  let colidiu = false;
+  barreiras.pares.forEach((ParDeBarreiras) => {
+    if (!colidiu) {
+      const superior = ParDeBarreiras.superior.elemento;
+      const inferior = ParDeBarreiras.inferior.elemento;
+
+      colidiu =
+        estaoSobrePostos(passaro.elemento, superior) ||
+        estaoSobrePostos(passaro.elemento, inferior);
+    }
+  });
+  return colidiu;
+}
+
 function FlappyBird() {
   let pontos = 0;
   const areaDoJogo = document.querySelector("[wm-flappy]");
@@ -145,6 +169,12 @@ function FlappyBird() {
     const temporizador = setInterval(() => {
       barreiras.animar();
       passaro.animar();
+
+      if (colidiu(passaro, barreiras)) {
+        clearInterval(temporizador);
+        alert("Game over! \nClique aqui para Reiniciar");
+        location.reload();
+      }
     }, 20);
   };
 }
