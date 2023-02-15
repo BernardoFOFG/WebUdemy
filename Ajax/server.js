@@ -28,11 +28,21 @@ app.post("/upload", (req, res) => {
   });
 });
 
-app.post('/formulario', (req, res) => {
+app.post("/formulario", (req, res) => {
   res.send({
     ...req.body,
-    id: 1
-  })
-})
+    id: 1,
+  });
+});
+
+app.get("/parOuImpar", (req, res) => {
+  // req.body = receber dados a partir do corpo
+  // req.query = receber dados a partir de uma consulta
+  // req.params = receber dados a partir do parametros
+  const par = parseInt(req.query.numero) % 2 === 0;
+  res.send({
+    resultado: par ? "par" : "impar",
+  });
+});
 
 app.listen(8080, () => console.log("Servidor funcionando!"));
