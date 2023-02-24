@@ -1,10 +1,11 @@
 {
-  "name": "gulp",
+  "name": "spa",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp",
+    "build": "gulp --production"
   },
   "keywords": [],
   "author": "Cod3r",
@@ -12,15 +13,15 @@
   "devDependencies": {
     "babel-core": "6.26.3",
     "babel-preset-env": "1.6.1",
+    "font-awesome": "4.7.0",
     "gulp": "4.0.2",
     "gulp-babel": "7.0.1",
     "gulp-concat": "2.6.1",
-    "gulp-sass": "^5.1.0",
-    "gulp-typescript": "4.0.2",
+    "gulp-htmlmin": "4.0.0",
+    "gulp-sass": "5.0.0",
     "gulp-uglify": "3.0.0",
     "gulp-uglifycss": "1.0.9",
-    "node-sass": "^8.0.0",
-    "sass": "^1.58.3",
-    "typescript": "2.8.3"
+    "gulp-watch": "5.0.1",
+    "gulp-webserver": "0.9.1"
   }
 }
