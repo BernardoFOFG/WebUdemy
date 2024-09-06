@@ -114,7 +114,12 @@
 <hr>
 
 <!-- Tooltip -->
+ <div>
+ <div class="alert alert-warning">Precisa chamar uma função JS! <strong>E agora?</strong></div>
 
+  <button class="btn btn-danger" data-toggle="tooltip" data-placment="top" title="Pense antes!">Excluir</button>
+
+</div>
 <h1 class="mt-5">6. Slider -
     <small>
         <a href="https://getbootstrap.com/docs/4.0/components/carousel/" target="_black">Documentação Oficial</a>
@@ -135,4 +140,5 @@
 
 <script>
     // ...
+    $('[data-toggle="tooltip"]').tooltip()
 </script>
