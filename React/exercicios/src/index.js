@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Saudacao from "./components/Saudacao";
+import { Pai } from "./components/Pai";
 
 ReactDOM.render(
   <>
-    <Saudacao tipo="Bom dia" nome="Bernardo" />
+    <Pai nome="Olá" sobrenome="Rafael"/>
   </>,
   document.getElementById("root")
 );
