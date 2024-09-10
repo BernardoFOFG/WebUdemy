@@ -1,9 +1,9 @@
 import React from "react";
 
-export const Filho = ({ nome, sobrenome }) => {
+export const Filho = ({ nome, sobrenome, sobrenomePai }) => {
   return (
-    <h1>
-      {nome} {sobrenome}{" "}
-    </h1>
+    <li>
+      {nome} {sobrenomePai ? `${sobrenomePai}` : sobrenome}
+    </li>
   );
 };

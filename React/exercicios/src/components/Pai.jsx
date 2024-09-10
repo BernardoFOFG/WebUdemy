@@ -1,6 +1,6 @@
-import { Filho } from "./Filho";
+import React, { cloneElement } from "react";
 
-export const Pai = ({ nome, sobrenome }) => {
+export const Pai = ({ nome, sobrenome, children }) => {
   return (
     <div>
       <h1>
@@ -8,8 +8,9 @@ export const Pai = ({ nome, sobrenome }) => {
       </h1>
       <h2>Filhos</h2>
       <ul>
-        <Filho nome="Filho1" sobrenome={sobrenome} />
-        <Filho {...Pai} />
+        {React.Children.map(children, (child) =>
+          cloneElement(child, { sobrenomePai: sobrenome })
+        )}
       </ul>
     </div>
   );
