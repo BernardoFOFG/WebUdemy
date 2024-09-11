@@ -5,7 +5,7 @@ import Header from "../header";
 
 export default (props) => (
   <>
-    <Header />
+    <Header {...props}/>
     <main className="content">Conteúdo</main>
   </>
 );
