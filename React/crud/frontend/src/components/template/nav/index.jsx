@@ -1,17 +1,18 @@
+import { Link } from "react-router-dom";
 import "./style.css";
 import React from "react";
 
 export default (props) => (
   <aside className="menu-area">
     <nav className="menu">
-      <a href="#/">
+      <Link to="/">
         <i className="fa fa-home"></i>
         Início
-      </a>
-      <a href="#/">
+      </Link>
+      <Link to="/users">
         <i className="fa fa-home"></i>
         Usuários
-      </a>
+      </Link>
     </nav>
   </aside>
 );
