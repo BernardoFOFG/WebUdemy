@@ -3,7 +3,8 @@
 
   --logo-height: 100px;
   --header-height: 100px;
-  --aside-with: 225px;
+  --menu-top-height: 70px;
+  --aside-width: 225px;
   --footer-height: 40px;
 
   --shadow: 0 2px 23px 0 rgba(0, 0, 0, 0.1), 0 2px 49px 0 rgba(0, 0, 0, 0.06);
@@ -14,12 +15,20 @@
   font-family: "Montserrat", sans-serif;
 }
 
+/* Layout em Grid */
+
 .app {
   margin: 0px;
   display: grid;
-  grid-template-columns: var(--aside-with) 1fr;
-  grid-template-row: var(--header-height) 1fr var(--footer-height);
-  grid-template-areas: "logo header" "menu content" "menu footer";
+  grid-template-columns: var(--aside-width) 1fr;
+  grid-template-rows:
+    var(--header-height)
+    1fr
+    var(--footer-height);
+  grid-template-areas:
+    "logo header"
+    "menu content"
+    "menu footer";
   height: 100vh;
   background-color: #f5f5f5;
 }
