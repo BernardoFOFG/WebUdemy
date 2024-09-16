@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "./_components/Button";
 import { Table } from "./_components/Table";
 import { Title } from "./_components/Title";
 import Cliente from "./_core/Cliente";
@@ -18,8 +19,10 @@ export default function Home() {
   return (
     <div className="flex flex-col justify-center items-center h-screen">
       <Title title="Cadastro Simples" />
-
       <div className="px-2 py-3 bg-neutral-100 text-neutral-950 w-full">
+        <div className="flex justify-end mb-4">
+          <Button label="Novo Cliente" variant="green" />
+        </div>
         <Table
           clientes={clientes}
           clienteSelecionado={clienteSelecionado}
