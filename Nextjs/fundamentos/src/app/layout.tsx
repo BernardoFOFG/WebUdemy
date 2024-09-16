@@ -13,7 +13,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>{children}</body>
+      <body
+        className={`antialiased bg-gradient-to-r to-neutral-950 from-neutral-700 text-neutral-50`}
+      >
+        <main className="flex flex-col w-2/3 mx-auto">{children}</main>
+      </body>
     </html>
   );
 }
