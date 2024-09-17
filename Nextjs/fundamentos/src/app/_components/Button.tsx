@@ -4,12 +4,14 @@ interface ButtonProps {
   label: string;
   variant?: "green" | "blue" | "neutral";
   className?: string;
+  onClick?: () => void;
 }
 
 export const Button = ({
   label,
   variant = "neutral",
   className,
+  onClick,
 }: ButtonProps) => {
   const variantColors = {
     green: "from-green-400 to-green-700 text-neutral-950",
@@ -24,6 +26,7 @@ export const Button = ({
         variantColors[variant],
         className
       )}
+      onClick={onClick}
     >
       {label}
     </button>

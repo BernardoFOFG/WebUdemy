@@ -34,13 +34,13 @@ export const Table = ({
             <td className="text-center p-4 space-x-4">
               <button
                 className="rounded-full transition-all hover:bg-purple-950 p-2 text-red-500"
-                onClick={() => clienteSelecionado?.(v)}
+                onClick={() => clienteExcluido?.(v)}
               >
                 <Trash />
               </button>
               <button
                 className="rounded-full transition-all hover:bg-purple-950 p-2 text-yellow-400"
-                onClick={() => clienteExcluido?.(v)}
+                onClick={() => clienteSelecionado?.(v)}
               >
                 <PenBoxIcon />
               </button>
