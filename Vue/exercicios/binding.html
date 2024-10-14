@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Binding</title>
-    <link rel="stylesheet" href="/css/estilo.css">
+    <link rel="stylesheet" href="/css/estilo.css" />
     <script src="/js/vue.min.js"></script>
-</head>
-<body class="exercicio">
+  </head>
+  <body class="exercicio">
+    <div id="app">
+      <p><a href="{{ link }}">sem bind</a></p>
+      <p><a v-bind:href="link">com bind</a></p>
+      <p><a :href="link">shortcout para usar o bind</a></p>
 
+      <p>
+        <input type="text" v-model="nome" />
+        <!-- v-model serve para controlar uma variável e manipular ela a partir de um elemento de entrada de dados -->
+        <span>{{ nome }}</span>
+      </p>
+    </div>
     <script>
-        // ...
+      new Vue({
+        el: "#app",
+        data: {
+          nome: "maria",
+          link: "https://www.youtube.com/@BernardoTuba",
+        },
+        watch: { // serve para gerenciar estado de um valor, e consigo chamar outras funções a partir dessa nova versão de variavel
+          nome(newValue) {
+            console.log(newValue.toUpperCase());
+          },
+        },
+      });
     </script>
-</body>
+  </body>
 </html>
