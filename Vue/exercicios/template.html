@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Template</title>
-    <link rel="stylesheet" href="/css/estilo.css">
+    <link rel="stylesheet" href="/css/estilo.css" />
     <script src="/js/vue.min.js"></script>
-</head>
-<body class="exercicio">
-    
+  </head>
+  <body class="exercicio">
+    <div id="app"></div>
     <script>
-        // ...
+      new Vue({
+        el: "#app",
+        data: {
+          title: "VUEJS",
+          subtitle: "Framework Progressivo",
+        },
+        template: `
+                <div>
+                    <h1>{{title}}</h1>
+                    <h2>{{subtitle}}</h2>
+                </div>
+            `,
+      });
     </script>
-</body>
+  </body>
 </html>
