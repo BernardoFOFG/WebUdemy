@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const saudacao = require("./middleware/saudacao");
 
-app.use(saudacao('Bernardo')); // Chamando função middleware
+app.use(saudacao("Bernardo")); // Chamando função middleware
 
 app.use("/", (req, res, next) => {
 	// Essa rota servirá como um middleware
@@ -39,6 +39,31 @@ app.get("/json2", (req, res) => {
 		],
 		status: 200,
 		res: "OK",
+	});
+});
+
+app.get("/cliente/relatorio", (req, res) => {
+	res.send(
+		`Cliente relatório: completo ${req.query.completo} ano = ${req.query.ano}`,
+	);
+	// Acesso as Querys da requisição
+	// Ex: /cliente/relatorio?completo=true&ano=2023
+});
+
+app.get("/cliente/:id", (req, res) => {
+	res.send(`Cliente ${req.params.id} selecionado`);
+	// Acessando os parametros da requisição
+	// Ex: /cliente/2
+});
+
+app.post("/corpo", (req, res) => {
+	let corpo = "";
+	req.on("data", (parte) => {
+		corpo += parte;
+	});
+
+	req.on("end", () => {
+		res.send(corpo);
 	});
 });
 
