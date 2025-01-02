@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const saudacao = require("./middleware/saudacao");
 const bodyParser = require("body-parser");
+const userApi = require("./api/user");
+const productApi = require("./api/product");
 
 app.use(bodyParser.json());
 app.use(saudacao("Bernardo")); // Chamando função middleware
@@ -73,6 +75,12 @@ app.post("/corpo", (req, res) => {
   // Utilizando body-parser para mandar informações pelo corpo da requisição
   res.send(req.body);
 });
+
+app.get("user", userApi.get);
+app.delete("user", userApi.delete);
+app.post("user", userApi.save);
+
+productApi(app, "com param!");
 
 app.listen(3002, () => {
   console.log("Servidor Iniciado");
