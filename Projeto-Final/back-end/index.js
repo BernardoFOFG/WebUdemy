@@ -6,6 +6,7 @@ app.db = db; // O DB, é um extensão do Knex que faz a conexão com o banco de 
 
 consign() // Gerenciador de dependências
   .then("./config/middlewares.js")
+  .then('./api/validation.js')
   .then("./api")
   .then("./config/routes.js")
   .into(app);
