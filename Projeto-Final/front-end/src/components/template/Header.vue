@@ -4,9 +4,13 @@
       <i class="fa fa-lg" :class="icon"></i>
     </a>
     <h1 class="title">
-      {{ title }}
+      <route-link to="/">
+        {{ title }}
+      </route-link>
     </h1>
-   <UserDropdown v-if="!hideUserDropdown" />
+    <div>
+      <UserDropdown v-if="!hideUserDropdown" />
+    </div>
   </header>
 </template>
 
@@ -43,6 +47,7 @@ export default {
   justify-content: space-between;
   align-items: center;
 }
+
 .title {
   font-size: 1.2rem;
   color: #fff;
@@ -54,7 +59,11 @@ export default {
   text-decoration: none;
 }
 
-header.header > a.toggle {
+.title a:hover {
+  color: #fff;
+}
+
+header.header>a.toggle {
   width: 60px;
   height: 100%;
   color: #fff;
@@ -65,7 +74,7 @@ header.header > a.toggle {
   align-items: center;
 }
 
-header.header > a.toggle:hover {
+header.header>a.toggle:hover {
   background-color: rgba(0, 0, 0, 0.4)
 }
 </style>
