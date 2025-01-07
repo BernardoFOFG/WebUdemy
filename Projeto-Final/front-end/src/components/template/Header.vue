@@ -1,10 +1,32 @@
 <template>
-  <header class="header"></header>
+  <header class="header">
+    <a @click="toggleMenu" class="toggle" v-if="!hideToggle">
+      <i class="fa fa-lg" :class="icon"></i>
+    </a>
+    <h1 class="title">
+      {{ title }}
+    </h1>
+    <button>Sessão do usuário</button>
+  </header>
 </template>
 
 <script>
 export default {
   name: "Header",
+  props: {
+    title: String,
+    hideToggle: Boolean
+  },
+  computed: {
+    icon() {
+      return 'fa-angle-left'
+    }
+  },
+  methods: {
+    toggleMenu() {
+      console.log('toggleMenu')
+    }
+  }
 };
 </script>
 
@@ -13,7 +35,32 @@ export default {
   grid-area: header;
   background: linear-gradient(to right, #1e469a, #49a7c1);
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 100;
+}
+
+.title a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header.header > a.toggle {
+  width: 60px;
+  height: 100%;
+  color: #fff;
+  justify-self: flex-start;
+  text-decoration: none;
+  display: flex;
   justify-content: center;
   align-items: center;
+}
+
+header.header > a.toggle:hover {
+  background-color: rgba(0, 0, 0, 0.4)
 }
 </style>
