@@ -4,9 +4,9 @@
       <i class="fa fa-lg" :class="icon"></i>
     </a>
     <h1 class="title">
-      <route-link to="/">
+      <router-link to="/">
         {{ title }}
-      </route-link>
+      </router-link>
     </h1>
     <div>
       <UserDropdown v-if="!hideUserDropdown" />
