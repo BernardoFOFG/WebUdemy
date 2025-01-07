@@ -11,19 +11,19 @@ module.exports = (app) => {
     const lastStat = await Stat.findOne({}, {}, { sort: { createdAt: -1 } });
 
     const stat = new Stat({
-      user: usersCount.count,
+      users: usersCount.count,
       categories: categoriesCount.count,
       articles: articlesCount.count,
       createdAt: new Date(),
     });
 
-    const changeUsers = !lastStat || stat.user !== lastStat.usersCount;
+    const changeUsers = !lastStat || stat.users !== lastStat.users;
     const changeCategories =
       !lastStat || stat.categories !== lastStat.categories;
     const changeArticles = !lastStat || stat.articles !== lastStat.articles;
 
     if (changeUsers || changeCategories || changeArticles) {
-      stat.save().then(() => console.log("[Stats] Estatísticas Atualizadas!"));
+      stat.save().then(() => console.log("[Stats] Estatíticas atualizadas!"));
     }
   });
 };
