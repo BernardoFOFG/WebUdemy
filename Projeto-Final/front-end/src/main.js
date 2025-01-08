@@ -4,6 +4,7 @@ import Vue from "vue";
 import App from "./App";
 import store from "./config/store";
 import router from "./config/route";
+import "./config/messages";
 import "./config/bootstrap";
 
 Vue.config.productionTip = false;
